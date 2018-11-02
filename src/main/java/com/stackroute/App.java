@@ -129,13 +129,13 @@ public class App
 
         for(String word: relevantTerms){
             for(String disease: diseases){
-                if(disease.contains(word)){
+                if(disease.contains(disease)){
                     diseaseContains = true;
                 }
             }
             for(String symptom: symptoms){
                 if(symptom.contains(word)){
-                    System.out.println(word);
+                    System.out.println(symptom);
                     System.out.println("***symptom***");
                     symptomContains = true;
                 }
