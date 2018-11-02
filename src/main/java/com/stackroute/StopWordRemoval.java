@@ -35,17 +35,21 @@ public class StopWordRemoval {
 
         List<String> stopwords = readStopWords("stopwords.txt");
 
+
         for(String term: terms){
             boolean flag = true;
             for(String stopword: stopwords){
                 if(term.equalsIgnoreCase(stopword)){
+                    //System.out.println(term);
                     flag = false;
                     break;
                 }
             }
-            if(flag == true)
+            if(flag)
                 resultingdoc.add(term);
         }
+
+        //System.out.println(resultingdoc);
 
 
 

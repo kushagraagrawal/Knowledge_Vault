@@ -8,7 +8,7 @@ import java.util.*;
 
 public class App 
 {
-    private static List<List<String>> uniqueTerms = new ArrayList<>();
+
     private static List<String> diseases = new ArrayList<>();
     private static List<String> symptoms = new ArrayList<>();
 
@@ -54,20 +54,20 @@ public class App
         return Math.log(docs.size() / n);
     }
 
-    public List<String> tfIdf(List<String> doc, List<List<String>> docs) {
+    public List<String> tfIdf(int index, List<List<String>> docs) {
 
         LinkedHashMap<String, Double> weightMap = new LinkedHashMap<>();
         List<String> relevantWords = new ArrayList<>();
         int numberOfWords = 20;
 
-
-        for(String words: uniqueTerms.get(0)){
-            double relevance = tf(doc, words) * idf(docs, words);
+        //System.out.println(docs.get(index));
+        for(String words: docs.get(index)){
+            double relevance = tf(docs.get(index), words) * idf(docs, words);
             weightMap.put(words, relevance);
 
 
         }
-        System.out.println(weightMap);
+        //System.out.println(weightMap);
 
         Map<String, Double> sortedMap = sortByValues(weightMap);
         //System.out.println(sortedMap);
@@ -81,6 +81,7 @@ public class App
             relevantWords.add(itr.next().getKey());
             i++;
         }
+        System.out.println(relevantWords);
 
 
 
@@ -92,12 +93,13 @@ public class App
     {
         GetAllDocs getAllDocs = new GetAllDocs();
         List<Document> allTheText = getAllDocs.readAllData();
-        List<String> terms = new ArrayList<>();
+
         List<List<String>> docs = new ArrayList<>();
         StopWordRemoval stopWordRemoval = new StopWordRemoval();
         App app = new App();
 
         for(Document document: allTheText){
+            List<String> terms = new ArrayList<>();
             for(Sentence sentence: document.sentences()){
                 for(int i=0;i<sentence.length();i++){
                     terms.add(sentence.lemma(i));
@@ -105,17 +107,19 @@ public class App
             }
             terms = stopWordRemoval.removeStopwords(terms);
             docs.add(terms);
-            uniqueTerms.add(terms);
-            terms.clear();
         }
 
 
-        List<String> relevantTerms = app.tfIdf(docs.get(0), docs);
-        System.out.println(relevantTerms);
+
+
+        List<String> relevantTerms = app.tfIdf(0, docs);
+//        relevantTerms = app.tfIdf(1, docs);
+//        relevantTerms = app.tfIdf(2, docs);
+//        relevantTerms = app.tfIdf(3, docs);
+//        relevantTerms = app.tfIdf(4, docs);
+
 
         GetDiseasesAndSymptoms diseasesAndSymptoms = new GetDiseasesAndSymptoms();
-        //System.out.println(diseasesAndSymptoms.getDiseases());
-        //System.out.println(diseasesAndSymptoms.getSymptoms());
 
         List<String> diseases = diseasesAndSymptoms.getDiseases();
         List<String> symptoms = diseasesAndSymptoms.getSymptoms();
@@ -126,22 +130,18 @@ public class App
         for(String word: relevantTerms){
             for(String disease: diseases){
                 if(disease.contains(word)){
-//                    System.out.println(disease);
-//                    System.out.println("*******disease*******");
                     diseaseContains = true;
                 }
             }
             for(String symptom: symptoms){
                 if(symptom.contains(word)){
-//                    System.out.println(symptom);
-//                    System.out.println("*********symptom********");
+                    System.out.println(word);
+                    System.out.println("***symptom***");
                     symptomContains = true;
                 }
             }
         }
         if(diseaseContains || symptomContains){
-//            System.out.println(diseaseContains);
-//            System.out.println(symptomContains);
             System.out.println("relevant");
         }else{
             System.out.println("irrelevant");
