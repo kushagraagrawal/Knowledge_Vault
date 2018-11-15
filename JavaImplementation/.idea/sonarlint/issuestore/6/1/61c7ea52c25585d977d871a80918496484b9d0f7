@@ -1,0 +1,13 @@
+
+V
+squid:S106*"9Replace this use of System.out or System.err by a logger.(á­Îý8¡ï¦Žñ,
+csquid:S11922"FDefine a constant instead of duplicating this literal "@type" 5 times.(²’óg8ð•™Žñ,
+V
+squid:S106%"9Replace this use of System.out or System.err by a logger.(à³Çç8“›¤Žñ,
+^squid:S1854";Remove this useless assignment to local variable "context".(–ÇÓ²ûÿÿÿÿ8®ØŽŽñ,
+Fsquid:S1148a"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8“îšŽñ,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(åª¿ä8®ØŽŽñ,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(„Ü´Ô8Ï¡ŽŽñ,
+osquid:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(­½½”ýÿÿÿÿ8Êþ¶Žñ,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¹ŸŠ—8·ÂŽŽñ,
+Osquid:S1481",Remove this unused "context" local variable.(–ÇÓ²ûÿÿÿÿ8®ØŽŽñ,

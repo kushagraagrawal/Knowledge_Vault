@@ -81,7 +81,7 @@ public class App
             relevantWords.add(itr.next().getKey());
             i++;
         }
-        System.out.println(relevantWords);
+        //System.out.println(relevantWords);
 
 
 
@@ -102,7 +102,10 @@ public class App
             List<String> terms = new ArrayList<>();
             for(Sentence sentence: document.sentences()){
                 for(int i=0;i<sentence.length();i++){
-                    terms.add(sentence.lemma(i));
+                    terms.add(sentence.lemma(i).toLowerCase());
+//                    Optional<int> dep = sentence.governor(i);
+                    //System.out.println(sentence.coref());//sentence.coref();
+
                 }
             }
             terms = stopWordRemoval.removeStopwords(terms);
@@ -112,41 +115,20 @@ public class App
 
 
 
-        List<String> relevantTerms = app.tfIdf(0, docs);
-//        relevantTerms = app.tfIdf(1, docs);
-//        relevantTerms = app.tfIdf(2, docs);
-//        relevantTerms = app.tfIdf(3, docs);
-//        relevantTerms = app.tfIdf(4, docs);
-
-
-        GetDiseasesAndSymptoms diseasesAndSymptoms = new GetDiseasesAndSymptoms();
-
-        List<String> diseases = diseasesAndSymptoms.getDiseases();
-        List<String> symptoms = diseasesAndSymptoms.getSymptoms();
-
-        boolean diseaseContains = false;
-        boolean symptomContains = false;
-
-        for(String word: relevantTerms){
-            for(String disease: diseases){
-                if(disease.contains(word)){
-                    System.out.println(disease);
-                    System.out.println("*****disease****");
-                    diseaseContains = true;
-                }
-            }
-            for(String symptom: symptoms){
-                if(symptom.contains(word)){
-                    System.out.println(symptom);
-                    System.out.println("***symptom***");
-                    symptomContains = true;
-                }
-            }
+        long startTime = System.currentTimeMillis();
+        for (int i=0;i<5;i++){
+            List<String> relevantTerms = app.tfIdf(i, docs);
+            System.out.println(relevantTerms);
         }
-        if(diseaseContains || symptomContains){
-            System.out.println("relevant");
-        }else{
-            System.out.println("irrelevant");
-        }
+        long stopTime = System.currentTimeMillis();
+        System.out.println(stopTime - startTime);
+
+
+
+
+
+
+
+
     }
 }

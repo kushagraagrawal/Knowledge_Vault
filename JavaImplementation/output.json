@@ -1,0 +1,28 @@
+{
+  "code" : {
+    "code" : "413",
+    "@type" : "MedicalCode",
+    "codingSystem" : "ICD-9"
+  },
+  "possibleTreatment" : [ {
+    "@type" : "Drug",
+    "name" : "Paracetamol",
+    "DoseSchedule" : [ {
+      "doseUnit" : "500mg",
+      "frequency" : "twice daily"
+    } ]
+  }, {
+    "@type" : "Drug",
+    "name" : "Paracetamol",
+    "DoseSchedule" : [ {
+      "doseUnit" : "500mg",
+      "frequency" : "twice daily"
+    } ]
+  } ],
+  "@type" : "MedicalCondition",
+  "associatedAnatomy" : {
+    "@type" : "sfa",
+    "name" : "safa"
+  },
+  "@context" : "http://schema.org"
+}

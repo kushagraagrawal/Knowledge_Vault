@@ -1,0 +1,13 @@
+
+Hsquid:S1068",Remove this unused "diseases" private field.(µ¢¶¿ùÿÿÿÿ
+Csquid:S1068",Remove this unused "symptoms" private field.(É¯¤®
+Ssquid:S35186"7Make sure "n" can't be zero before doing this division.(Ø’‚íýÿÿÿÿ
+gsquid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ
+gsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(Òý­ûÿÿÿÿ
+bsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(»¼À
+bsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ç‹Ï 
+gsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(ÄóëÕüÿÿÿÿ
+T
+squid:S106y"9Replace this use of System.out or System.err by a logger.(ô·ºÚúÿÿÿÿ
+T
+squid:S106|"9Replace this use of System.out or System.err by a logger.(Œ²Þïÿÿÿÿÿ
