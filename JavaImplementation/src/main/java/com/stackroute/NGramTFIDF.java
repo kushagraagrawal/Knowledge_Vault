@@ -2,6 +2,7 @@ package com.stackroute;
 
 import java.util.*;
 
+
 public class NGramTFIDF {
 
     private static HashMap sortByValues(HashMap map) {
@@ -69,25 +70,20 @@ public class NGramTFIDF {
             Map.Entry pair = (Map.Entry)it.next();
             weightMap.put((String)pair.getKey(),((double)pair.getValue())/denominator);
         }
-        System.out.println(weightMap);
-
-
-        // Normalizing values
-
-
         Map<String, Double> sortedMap = sortByValues(weightMap);
-        //System.out.println(sortedMap);
 
-
+        System.out.println(sortedMap);
 
 
         Iterator<Map.Entry<String, Double>> itr = sortedMap.entrySet().iterator();
         int i=0;
         while(itr.hasNext() && i<=numberOfWords){
-            relevantWords.add(itr.next().getKey());
-            i++;
+            String term = itr.next().getKey().trim();
+            if(!term.isEmpty()) {
+                relevantWords.add(term);
+                i++;
+            }
         }
-        //System.out.println(relevantWords);
 
 
 
@@ -98,9 +94,23 @@ public class NGramTFIDF {
     public static void main(String[] args){
         GetAllDocs getAllDocs = new GetAllDocs();
         List<List<String>> NGramList = getAllDocs.gettingAllnGrams();
+
         NGramTFIDF nGramTFIDF = new NGramTFIDF();
 
-        System.out.println(nGramTFIDF.tfIdf(2, NGramList));
+        List<String> terms = nGramTFIDF.tfIdf(1, NGramList);
+        System.out.println(terms);
 
+        GetDiseasesAndSymptoms diseasesAndSymptoms = new GetDiseasesAndSymptoms();
+        List<String> diseases = diseasesAndSymptoms.getDiseases();
+        List<String> symptoms = diseasesAndSymptoms.getSymptoms();
+
+        for (String term: terms){
+            for(String symptom: diseases){
+                if(symptom.contains(term)){
+                    System.out.println(term);
+                }
+            }
+
+        }
     }
 }

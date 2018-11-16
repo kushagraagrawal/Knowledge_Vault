@@ -56,7 +56,7 @@ public class GetAllDocs {
             String line = br.readLine();
 
             while (line!=null){
-                sb.append(line);
+                sb.append(line.replaceAll("[^\\w\\s\\ ]", "").toLowerCase());
 
                 line = br.readLine();
             }
