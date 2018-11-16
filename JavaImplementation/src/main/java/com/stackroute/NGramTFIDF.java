@@ -1,16 +1,8 @@
 package com.stackroute;
 
-import edu.stanford.nlp.simple.*;
-
 import java.util.*;
 
-
-
-public class App 
-{
-
-    private static List<String> diseases = new ArrayList<>();
-    private static List<String> symptoms = new ArrayList<>();
+public class NGramTFIDF {
 
     private static HashMap sortByValues(HashMap map) {
         List list = new LinkedList(map.entrySet());
@@ -60,14 +52,28 @@ public class App
         List<String> relevantWords = new ArrayList<>();
         int numberOfWords = 20;
 
+        double denominator = 0.0;
+
         //System.out.println(docs.get(index));
         for(String words: docs.get(index)){
             double relevance = tf(docs.get(index), words) * idf(docs, words);
+            denominator += (relevance * relevance);
             weightMap.put(words, relevance);
 
 
         }
+        denominator = Math.sqrt(denominator);
         //System.out.println(weightMap);
+        Iterator it = weightMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            weightMap.put((String)pair.getKey(),((double)pair.getValue())/denominator);
+        }
+        System.out.println(weightMap);
+
+
+        // Normalizing values
+
 
         Map<String, Double> sortedMap = sortByValues(weightMap);
         //System.out.println(sortedMap);
@@ -89,46 +95,12 @@ public class App
 
     }
 
-    public static void main( String[] args )
-    {
+    public static void main(String[] args){
         GetAllDocs getAllDocs = new GetAllDocs();
-        List<Document> allTheText = getAllDocs.readAllData();
+        List<List<String>> NGramList = getAllDocs.gettingAllnGrams();
+        NGramTFIDF nGramTFIDF = new NGramTFIDF();
 
-//        List<List<String>> docs = new ArrayList<>();
-//        StopWordRemoval stopWordRemoval = new StopWordRemoval();
-//        App app = new App();
-//
-//        for(Document document: allTheText){
-//            List<String> terms = new ArrayList<>();
-//            for(Sentence sentence: document.sentences()){
-//                for(int i=0;i<sentence.length();i++){
-//                    terms.add(sentence.lemma(i).toLowerCase());
-////                    Optional<int> dep = sentence.governor(i);
-//                    //System.out.println(sentence.coref());//sentence.coref();
-//
-//                }
-//            }
-//            terms = stopWordRemoval.removeStopwords(terms);
-//            docs.add(terms);
-//        }
-//
-//
-//
-//
-//        long startTime = System.currentTimeMillis();
-//        for (int i=0;i<5;i++){
-//            List<String> relevantTerms = app.tfIdf(i, docs);
-//            System.out.println(relevantTerms);
-//        }
-//        long stopTime = System.currentTimeMillis();
-//        System.out.println(stopTime - startTime);
-
-
-
-
-
-
-
+        System.out.println(nGramTFIDF.tfIdf(2, NGramList));
 
     }
 }

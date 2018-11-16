@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class GetAllDocs {
+
+
     public List<String> listFilesForFolder(final File folder) {
         List<String> fileNames = new ArrayList<>();
         for (final File fileEntry : folder.listFiles()) {
@@ -35,6 +37,8 @@ public class GetAllDocs {
 
                 line = br.readLine();
             }
+//            NGram nGram = new NGram(sb.toString(),2);
+//            System.out.println(nGram.list());
             return new Document(sb.toString());
         }catch (IOException e){
             e.printStackTrace();
@@ -42,6 +46,29 @@ public class GetAllDocs {
             br.close();
         }
         return new Document("Unable To Read");
+    }
+
+    public List<String> getnGrams(String fileName) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader("Files/" + fileName));
+        try{
+
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line!=null){
+                sb.append(line);
+
+                line = br.readLine();
+            }
+            NGram nGram = new NGram(sb.toString().toLowerCase(),2);
+            //System.out.println(nGram.list());
+            return nGram.list();
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            br.close();
+        }
+        return Collections.emptyList();
     }
 
     public List<Document> readAllData(){
@@ -54,6 +81,22 @@ public class GetAllDocs {
                 allTheData.add(getAllDocs.getText(file));
             }
             return allTheData;
+        }catch (IOException  e){
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
+
+    public List<List<String>> gettingAllnGrams(){
+        final File folder = new File("Files");
+        GetAllDocs getAllDocs = new GetAllDocs();
+        List<String> fileNames = getAllDocs.listFilesForFolder(folder);
+        List<List<String>> allTheNGrams = new ArrayList<>();
+        try {
+            for(String file: fileNames){
+                allTheNGrams.add(getAllDocs.getnGrams(file));
+            }
+            return allTheNGrams;
         }catch (IOException  e){
             e.printStackTrace();
         }
