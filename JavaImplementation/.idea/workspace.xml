@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca47d077-16ca-42fb-a7e0-cfd82a2d0245" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Files/document6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stackroute/corefexample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stackroute/NGramTFIDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stackroute/NGramTFIDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stackroute/GetAllDocs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stackroute/GetAllDocs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stackroute/NGramTFIDF$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stackroute/NGramTFIDF$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/stackroute/NGramTFIDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stackroute/NGramTFIDF.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +28,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
-          <entry key="java" value="11" />
+          <entry key="java" value="12" />
           <entry key="json" value="6" />
           <entry key="txt" value="9" />
           <entry key="xml" value="2" />
@@ -40,7 +36,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="12" />
           <entry key="JSON" value="6" />
           <entry key="PLAIN_TEXT" value="10" />
           <entry key="XML" value="2" />
@@ -48,15 +44,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4016" />
-          <entry key="txt" value="8" />
+          <entry key="java" value="4148" />
+          <entry key="txt" value="14" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4016" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="JAVA" value="4148" />
+          <entry key="PLAIN_TEXT" value="14" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -65,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/NGramTFIDF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+            <state relative-caret-position="900">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
               <folding>
                 <element signature="method#sortByValues#0;class#NGramTFIDF#0" />
                 <element signature="method#tf#0;class#NGramTFIDF#0" />
@@ -80,19 +76,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files/document6.txt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="51" column="94" selection-start-line="51" selection-start-column="94" selection-end-line="51" selection-end-column="94" />
+            <state relative-caret-position="810">
+              <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/corefexample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java" />
         <option value="$PROJECT_DIR$/Files/document6.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/stackroute/NGramTFIDF.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stackroute/corefexample.java" />
       </list>
     </option>
   </component>
@@ -195,7 +195,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542370440311" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542371723339" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -210,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NGramTFIDF">
+  <component name="RunManager" selected="Application.corefexample">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stackroute.App" />
       <module name="nlpAPIdemo" />
@@ -263,14 +263,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="corefexample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.stackroute.corefexample" />
+      <module name="nlpAPIdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stackroute.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.App" />
       <item itemvalue="Application.DepParseDemo" />
       <item itemvalue="Application.ReadandWriteToJSON" />
       <item itemvalue="Application.NGramTFIDF" />
+      <item itemvalue="Application.corefexample" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.corefexample" />
         <item itemvalue="Application.NGramTFIDF" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.ReadandWriteToJSON" />
@@ -460,28 +475,38 @@
         <state relative-caret-position="-2250" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java">
+    <entry file="file://$PROJECT_DIR$/Files/document6.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
+        <state relative-caret-position="351">
+          <caret line="75" column="623" selection-start-line="75" selection-start-column="623" selection-end-line="75" selection-end-column="623" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Files/document6.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/GetAllDocs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="51" column="94" selection-start-line="51" selection-start-column="94" selection-end-line="51" selection-end-column="94" />
+        <state relative-caret-position="810">
+          <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/NGramTFIDF.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="900">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
             <element signature="method#sortByValues#0;class#NGramTFIDF#0" />
             <element signature="method#tf#0;class#NGramTFIDF#0" />
             <element signature="method#idf#0;class#NGramTFIDF#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stackroute/corefexample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
