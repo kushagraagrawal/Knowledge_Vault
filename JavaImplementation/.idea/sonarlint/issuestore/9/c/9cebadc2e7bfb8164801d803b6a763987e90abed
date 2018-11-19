@@ -1,14 +1,14 @@
 
-gsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(Òı­ûÿÿÿÿ
-bsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ç‹Ï 
-Csquid:S1068",Remove this unused "symptoms" private field.(É¯¤®
-bsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(»¼À
-gsquid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ
-gsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(ÄóëÕüÿÿÿÿ
-[
-squid:S106y"9Replace this use of System.out or System.err by a logger.(ô·ºÚúÿÿÿÿ8ƒî‹ºğ,
-[
-squid:S106|"9Replace this use of System.out or System.err by a logger.(Œ²Şïÿÿÿÿÿ8º¶‘ºğ,
-Dsquid:S1604"(Make this anonymous inner class a lambda(××‹ñùÿÿÿÿ
 Hsquid:S1068",Remove this unused "diseases" private field.(µ¢¶¿ùÿÿÿÿ
-Ssquid:S35186"7Make sure "n" can't be zero before doing this division.(Ø’‚íıÿÿÿÿ
+Dsquid:S1604"(Make this anonymous inner class a lambda(××‹ñùÿÿÿÿ
+bsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ç‹Ï 
+gsquid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(Òı­ûÿÿÿÿ
+bsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(»¼À
+Csquid:S1068",Remove this unused "symptoms" private field.(É¯¤®
+gsquid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ
+nsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.(Ê”²ùùÿÿÿÿ8íü¼Şñ,
+isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(ÙÛ¢Ù8íü¼Şñ,
+nsquid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8íü¼Şñ,
+nsquid:CommentedOutCodeLinev"<This block of commented-out lines of code should be removed.(é½Ğ…úÿÿÿÿ8íü¼Şñ,
+Msquid:S1481_"/Remove this unused "allTheText" local variable.(°˜ş8íü¼Şñ,
+\squid:S1854_">Remove this useless assignment to local variable "allTheText".(°˜ş8íü¼Şñ,

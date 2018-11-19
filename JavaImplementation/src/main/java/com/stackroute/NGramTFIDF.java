@@ -31,7 +31,8 @@ public class NGramTFIDF {
             if(term.equalsIgnoreCase(word))
                 result++;
         }
-        return result / doc.size();
+        //return result / doc.size();
+        return Math.log(1 + result);
     }
 
     public double idf(List<List<String>> docs, String term) {
@@ -44,7 +45,7 @@ public class NGramTFIDF {
                 }
             }
         }
-        return Math.log((docs.size() + 1) / (n+1));
+        return Math.log((docs.size() + n) / n);
     }
 
     public List<String> tfIdf(int index, List<List<String>> docs) {
@@ -93,7 +94,7 @@ public class NGramTFIDF {
 
     public static void main(String[] args){
         GetAllDocs getAllDocs = new GetAllDocs();
-        List<List<String>> NGramList = getAllDocs.gettingAllnGrams();
+        List<List<String>> NGramList = getAllDocs.gettingAllnGrams(2);
 
         NGramTFIDF nGramTFIDF = new NGramTFIDF();
 
@@ -106,8 +107,8 @@ public class NGramTFIDF {
 
         for (String term: terms){
             for(String symptom: diseases){
-                if(symptom.contains(term)){
-                    System.out.println(term);
+                if(symptom.contains(term) || term.contains(symptom)){
+                    System.out.println(symptom);
                 }
             }
 

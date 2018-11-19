@@ -44,7 +44,7 @@ public class NGram {
     }
 
     public List<String> list() {
-        List<String> ngrams = new ArrayList<String>();
+        List<String> ngrams = new ArrayList<>();
         while (seek()) {
             ngrams.add(get());
         }

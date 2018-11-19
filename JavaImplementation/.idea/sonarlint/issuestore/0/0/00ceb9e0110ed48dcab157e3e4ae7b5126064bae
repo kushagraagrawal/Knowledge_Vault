@@ -1,0 +1,13 @@
+
+psquid:S00117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒéý8õ÷€ßñ,
+[
+squid:S106n"9Replace this use of System.out or System.err by a logger.(ùû·–úÿÿÿÿ8Ù½›âñ,
+nsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(Òý­ûÿÿÿÿ8ˆèÞßñ,
+Ksquid:S1481i"-Remove this unused "symptoms" local variable.(øÜŽ¾8Š¿ãñ,
+Zsquid:S1854i"<Remove this useless assignment to local variable "symptoms".(øÜŽ¾8Š¿ãñ,
+Ksquid:S1604"(Make this anonymous inner class a lambda(××‹ñùÿÿÿÿ8‚ëƒßñ,
+[
+squid:S106K"9Replace this use of System.out or System.err by a logger.(Ù¡ï‚þÿÿÿÿ8¦ð·ãñ,
+[
+squid:S106e"9Replace this use of System.out or System.err by a logger.(ýÓõúÿÿÿÿ8ÄÌ¸ãñ,
+nsquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ8‚ëƒßñ,

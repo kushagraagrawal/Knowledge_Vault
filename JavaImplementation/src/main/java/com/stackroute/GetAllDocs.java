@@ -48,7 +48,7 @@ public class GetAllDocs {
         return new Document("Unable To Read");
     }
 
-    public List<String> getnGrams(String fileName) throws IOException{
+    public List<String> getnGrams(String fileName, int n) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("Files/" + fileName));
         try{
 
@@ -60,7 +60,7 @@ public class GetAllDocs {
 
                 line = br.readLine();
             }
-            NGram nGram = new NGram(sb.toString().toLowerCase(),2);
+            NGram nGram = new NGram(sb.toString().toLowerCase(),n);
             //System.out.println(nGram.list());
             return nGram.list();
         }catch (IOException e){
@@ -87,14 +87,14 @@ public class GetAllDocs {
         return Collections.emptyList();
     }
 
-    public List<List<String>> gettingAllnGrams(){
+    public List<List<String>> gettingAllnGrams(int n){
         final File folder = new File("Files");
         GetAllDocs getAllDocs = new GetAllDocs();
         List<String> fileNames = getAllDocs.listFilesForFolder(folder);
         List<List<String>> allTheNGrams = new ArrayList<>();
         try {
             for(String file: fileNames){
-                allTheNGrams.add(getAllDocs.getnGrams(file));
+                allTheNGrams.add(getAllDocs.getnGrams(file, n));
             }
             return allTheNGrams;
         }catch (IOException  e){
