@@ -1,5 +1,8 @@
 package com.stackroute;
 
+import com.stackroute.domain.JsonLDObject;
+import com.stackroute.domain.OutputForDoc;
+
 import java.util.*;
 
 
@@ -25,17 +28,17 @@ public class NGramTFIDF {
         return sortedHashMap;
     }
 
-    public double tf(List<String> doc, String term){
+    private double tf(List<String> doc, String term){
         double result = 0;
         for(String word: doc){
             if(term.equalsIgnoreCase(word))
                 result++;
         }
-        //return result / doc.size();
+
         return Math.log(1 + result);
     }
 
-    public double idf(List<List<String>> docs, String term) {
+    private double idf(List<List<String>> docs, String term) {
         double n = 0;
         for (List<String> doc : docs) {
             for (String word : doc) {
@@ -45,10 +48,10 @@ public class NGramTFIDF {
                 }
             }
         }
-        return Math.log((docs.size() + n) / n);
+        return Math.log((docs.size()) / (n+1));
     }
 
-    public List<String> tfIdf(int index, List<List<String>> docs) {
+    private List<String> tfIdf(int index, List<List<String>> docs) {
 
         LinkedHashMap<String, Double> weightMap = new LinkedHashMap<>();
         List<String> relevantWords = new ArrayList<>();
@@ -97,21 +100,58 @@ public class NGramTFIDF {
         List<List<String>> NGramList = getAllDocs.gettingAllnGrams(2);
 
         NGramTFIDF nGramTFIDF = new NGramTFIDF();
+        List<OutputForDoc> relevantTerms = new ArrayList<>();
 
-        List<String> terms = nGramTFIDF.tfIdf(1, NGramList);
-        System.out.println(terms);
-
-        GetDiseasesAndSymptoms diseasesAndSymptoms = new GetDiseasesAndSymptoms();
-        List<String> diseases = diseasesAndSymptoms.getDiseases();
-        List<String> symptoms = diseasesAndSymptoms.getSymptoms();
-
-        for (String term: terms){
-            for(String symptom: diseases){
-                if(symptom.contains(term) || term.contains(symptom)){
-                    System.out.println(symptom);
-                }
-            }
-
+        for(int i=0;i<6;i++){
+            List<String> terms = nGramTFIDF.tfIdf(i, NGramList);
+            relevantTerms.add(new OutputForDoc(i,"new title", terms));
+        }
+        List<JsonLDObject> getJson = nGramTFIDF.convertTermsToJsonLD(relevantTerms);
+        for(JsonLDObject json: getJson){
+            System.out.println(json.getJsonld());
         }
     }
+    private List<JsonLDObject> convertTermsToJsonLD(List<OutputForDoc> outputForDocs) {
+        /*
+            {
+            "@context": "http://schema.org",
+            "@type": "MedicalCondition",
+            "alternateName": "angina pectoris",
+            "associatedAnatomy": {
+                "@type": "AnatomicalStructure",
+                "name": "heart"
+                }
+            }
+         */
+        GetDiseasesAndSymptoms getDiseasesAndSymptoms = new GetDiseasesAndSymptoms();
+        List<String> diseases = getDiseasesAndSymptoms.getDiseases();
+        List<String> symptoms = getDiseasesAndSymptoms.getSymptoms();
+        List<JsonLDObject> jsonLDObjects = new ArrayList<>();
+        for(OutputForDoc documents: outputForDocs){
+            Map<String, Object> root = new HashMap<>();
+            root.put("@context","http://schema.org");
+            root.put("@type", "MedicalCondition");
+            for(String keyword: documents.getKeywords()){
+
+                for(String disease: diseases){
+                    if(disease.contains(keyword) || keyword.contains(disease)){
+                        root.put("alternateName", disease);
+                    }
+                }
+                Map<String, String> Anatomy = new HashMap<>();
+                for(String bodypart: symptoms){
+                    if(bodypart.contains(keyword) || keyword.contains(bodypart)){
+                        Anatomy.put("@type", "AnatomicalStructure");
+                        Anatomy.put("name", bodypart);
+
+                    }
+                }
+                    root.put("associatedAnatomy", Anatomy);
+
+            }
+            jsonLDObjects.add(new JsonLDObject(documents.getId(), root));
+        }
+        return jsonLDObjects;
+    }
+
 }

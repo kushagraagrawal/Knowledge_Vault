@@ -1,13 +1,14 @@
 
-psquid:S00117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÒéý8õ÷€ßñ,
+V
+squid:S106o"9Replace this use of System.out or System.err by a logger.(ÍÞ´«8Ù½›âñ,
+nsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(Òý­ûÿÿÿÿ8ˆèÞßñ,
 [
-squid:S106n"9Replace this use of System.out or System.err by a logger.(ùû·–úÿÿÿÿ8Ù½›âñ,
-nsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(Òý­ûÿÿÿÿ8ˆèÞßñ,
-Ksquid:S1481i"-Remove this unused "symptoms" local variable.(øÜŽ¾8Š¿ãñ,
-Zsquid:S1854i"<Remove this useless assignment to local variable "symptoms".(øÜŽ¾8Š¿ãñ,
+squid:S106f"9Replace this use of System.out or System.err by a logger.(ýÓõúÿÿÿÿ8ÄÌ¸ãñ,
 Ksquid:S1604"(Make this anonymous inner class a lambda(××‹ñùÿÿÿÿ8‚ëƒßñ,
+Ksquid:S1481j"-Remove this unused "symptoms" local variable.(øÜŽ¾8Öû”Òò,
+usquid:S00117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê»¨Éþÿÿÿÿ8õ÷€ßñ,
 [
-squid:S106K"9Replace this use of System.out or System.err by a logger.(Ù¡ï‚þÿÿÿÿ8¦ð·ãñ,
-[
-squid:S106e"9Replace this use of System.out or System.err by a logger.(ýÓõúÿÿÿÿ8ÄÌ¸ãñ,
-nsquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ8‚ëƒßñ,
+squid:S106L"9Replace this use of System.out or System.err by a logger.(Ù¡ï‚þÿÿÿÿ8¦ð·ãñ,
+nsquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(–ùÅ¹úÿÿÿÿ8ÞëŽÒò,
+Zsquid:S1854j"<Remove this useless assignment to local variable "symptoms".(øÜŽ¾8Öû”Òò,
+nsquid:CommentedOutCodeLine;"<This block of commented-out lines of code should be removed.(Ôœü†øÿÿÿÿ8‚ëƒßñ,
