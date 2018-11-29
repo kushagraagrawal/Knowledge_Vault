@@ -15,10 +15,11 @@ public class CSVReader {
 
         try(BufferedReader br = new BufferedReader(new FileReader(FileName))){
             int counter = 0;
-            while((line = br.readLine()) != null && counter <= 3300){
+            while((line = br.readLine()) != null){
                 String[] info = line.split(csvSplitBy);
                 //System.out.println(info[1]);
                 resultList.add(info[index]);
+                System.out.println(counter);
                 counter++;
             }
 

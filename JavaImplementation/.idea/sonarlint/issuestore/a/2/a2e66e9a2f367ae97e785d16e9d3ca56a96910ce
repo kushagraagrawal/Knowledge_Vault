@@ -1,8 +1,8 @@
 
 gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Îã•®þÿÿÿÿ
 isquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(’¼‡8âìÞñ,
-isquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(Êáé8¨ƒóÞñ,
-Fsquid:S1148e"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Û¹þÞñ,
-Fsquid:S1148C"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8öïÞñ,
-?squid:S1148,"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
 ?squid:S1148U"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148,"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Fsquid:S1148C"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8öïÞñ,
+Fsquid:S1148e"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Û¹þÞñ,
+isquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(Êáé8¨ƒóÞñ,

@@ -39,7 +39,7 @@ public class GetAllDocs {
             }
 //            NGram nGram = new NGram(sb.toString(),2);
 //            System.out.println(nGram.list());
-            return new Document(sb.toString());
+            return new Document(sb.toString().replaceAll("[^a-zA-Z ]", "").toLowerCase());
         }catch (IOException e){
             e.printStackTrace();
         }finally {

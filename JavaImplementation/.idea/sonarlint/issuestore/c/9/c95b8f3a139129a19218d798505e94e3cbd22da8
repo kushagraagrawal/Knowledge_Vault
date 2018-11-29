@@ -1,27 +1,27 @@
 
+[
+squid:S1060"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¨â§‘ï,
+~"squid:ClassVariableVisibilityCheck"PMake text a static final constant or non-public and provide accessors if needed.(•úÚË
+[
+squid:S106."9Replace this use of System.out or System.err by a logger.(ï…ÀÁüÿÿÿÿ8¨â§‘ï,
+V
+squid:S106'"9Replace this use of System.out or System.err by a logger.(¼°ÓŸ8ÑÏƒ‘ï,
+Asquid:S1444"*Make this "public static text" field final(•úÚË
 ssquid:UselessImportCheck"HRemove this unused import 'edu.stanford.nlp.coref.CorefCoreAnnotations'.(æš¼‡8ôúã–ï,
 V
-squid:S106 "9Replace this use of System.out or System.err by a logger.(ì§Š8ğƒ‘ï,
+squid:S106""9Replace this use of System.out or System.err by a logger.(ì§Š8ğƒ‘ï,
 [
-squid:S106,"9Replace this use of System.out or System.err by a logger.(ï…ÀÁüÿÿÿÿ8¨â§‘ï,
+squid:S106/"9Replace this use of System.out or System.err by a logger.(şÊù§ıÿÿÿÿ8¨â§‘ï,
 [
-squid:S106."9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¨â§‘ï,
+squid:S106$"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ğƒ‘ï,
 [
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ÿ½öşúÿÿÿÿ8ğƒ‘ï,
-Zsquid:S3655!"7Call "Optional#isPresent()" before accessing the value.(Ö±‚°şÿÿÿÿ8ğƒ‘ï,
-~"squid:ClassVariableVisibilityCheck"PMake text a static final constant or non-public and provide accessors if needed.(•úÚË
+squid:S106("9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÑÏƒ‘ï,
 V
-squid:S106$"9Replace this use of System.out or System.err by a logger.(ŒóÒ8ÑÏƒ‘ï,
+squid:S106&"9Replace this use of System.out or System.err by a logger.(ŒóÒ8ÑÏƒ‘ï,
 [
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ò¼—Ïıÿÿÿÿ8ğƒ‘ï,
+squid:S106!"9Replace this use of System.out or System.err by a logger.(Ÿ½öşúÿÿÿÿ8ğƒ‘ï,
 [
-squid:S106-"9Replace this use of System.out or System.err by a logger.(şÊù§ıÿÿÿÿ8¨â§‘ï,
-Asquid:S1444"*Make this "public static text" field final(•úÚË
+squid:S106 "9Replace this use of System.out or System.err by a logger.(Ò¼—Ïıÿÿÿÿ8ğƒ‘ï,
 [
-squid:S106&"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÑÏƒ‘ï,
-V
-squid:S106%"9Replace this use of System.out or System.err by a logger.(¼°ÓŸ8ÑÏƒ‘ï,
-[
-squid:S106!"9Replace this use of System.out or System.err by a logger.(Ö±‚°şÿÿÿÿ8ğƒ‘ï,
-[
-squid:S106""9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ğƒ‘ï,
+squid:S106#"9Replace this use of System.out or System.err by a logger.(Ö±‚°şÿÿÿÿ8ğƒ‘ï,
+Zsquid:S3655#"7Call "Optional#isPresent()" before accessing the value.(Ö±‚°şÿÿÿÿ8ğƒ‘ï,
