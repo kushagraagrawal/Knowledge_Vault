@@ -24,14 +24,14 @@ import java.util.Map;
 public class webScrapingController {
 
     @Qualifier("webScrapingImpl")
-    private Scores scores;
+    private webScraping webScraper;
 
     private String url;
     private static final Logger LOGGER = LoggerFactory.getLogger(webScrapingController.class);
 
     @Autowired
-    public webScrapingController(Scores scores) {
-        this.scores = scores;
+    public webScrapingController(webScraping webScraper) {
+        this.webScraper = webScraper;
     }
 
     @Autowired
@@ -55,12 +55,8 @@ public class webScrapingController {
     @GetMapping()
     public ResponseEntity<?> getAllTerms(){
         ResponseEntity responseEntity;
-        scores.readJSON();
-        Map<String, Double> scoredTerms = scores.getScoredDoc(url);
-//        webScraping.readJSON();
-//        POJOClass pojoClass = new POJOClass(url, webScraping.getTitle(url), webScraping.getAllParagraphs(), webScraping.getBody());
-//        webScraping.getMap();
-//        kafkaTemplate.send(KafkaTopic, pojoClass);
+        webScraper.getURL(url);
+        Map<String, Double> scoredTerms = webScraper.getScoredDocs();
         responseEntity = new ResponseEntity<Map<String, Double>>(scoredTerms, HttpStatus.OK);
         return responseEntity;
     }

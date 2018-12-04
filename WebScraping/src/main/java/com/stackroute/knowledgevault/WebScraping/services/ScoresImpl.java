@@ -8,14 +8,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-@Service
+
 public class ScoresImpl implements Scores {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(webScrapingImpl.class);
