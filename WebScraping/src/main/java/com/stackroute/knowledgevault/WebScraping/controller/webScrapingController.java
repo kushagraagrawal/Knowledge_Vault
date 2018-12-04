@@ -48,7 +48,7 @@ public class webScrapingController {
     public ResponseEntity<?> gettingUrl(@RequestBody String url){
         this.url = url;
         LOGGER.info(url);
-        return new ResponseEntity<String>(url, HttpStatus.OK);
+        return new ResponseEntity<>(url, HttpStatus.OK);
     }
 
 
@@ -57,7 +57,7 @@ public class webScrapingController {
         ResponseEntity responseEntity;
         webScraper.getURL(url);
         Map<String, Double> scoredTerms = webScraper.getScoredDocs();
-        responseEntity = new ResponseEntity<Map<String, Double>>(scoredTerms, HttpStatus.OK);
+        responseEntity = new ResponseEntity<>(scoredTerms, HttpStatus.OK);
         return responseEntity;
     }
 

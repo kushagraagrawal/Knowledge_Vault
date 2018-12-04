@@ -23,12 +23,26 @@ public class ScoresImpl implements Scores {
     private NGram nGram;
     private Map<String, Long> tagWeights = new HashMap<>();
     private Document document;
+    private StopwordRemoval stopwordRemoval = new StopwordRemoval();
 
     @Override
     public void calculateScore(Document document, String tag) {
         List<String> getData = document.getElementsByTag(tag).eachText();
         for(String data: getData){
-            nGram = new NGram(data, 2);
+            /*
+            Removing stopwords before forming ngrams
+             */
+            String[] term = data.split(" ");
+            List<String> terms = Arrays.asList(term);
+            terms = stopwordRemoval.removeStopwords(terms);
+            StringBuilder stopwordRemoved = new StringBuilder();
+            for(int i=0;i<terms.size();i++){
+                stopwordRemoved.append(" " + terms.get(i));
+            }
+            /*
+            Forming ngrams
+             */
+            nGram = new NGram(stopwordRemoved.toString(), 2);
             List<String> ngrams = nGram.list();
             for(String ngram: ngrams){
                 double score = tf(ngrams, ngram);

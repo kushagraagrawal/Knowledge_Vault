@@ -1,8 +1,5 @@
 package com.stackroute.knowledgevault.WebScraping.services;
 
-import org.jsoup.nodes.Document;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +8,7 @@ import java.util.*;
 @Service
 @Primary
 public class webScrapingImpl implements webScraping {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(webScrapingImpl.class);
     private Map<String, Double> TermWeights = new HashMap<>();
-    private NGram nGram;
-    private Map<String, Long> tagWeights = new HashMap<>();
-    private Document document;
     private ScoresImpl scores = new ScoresImpl();
     String url;
 
