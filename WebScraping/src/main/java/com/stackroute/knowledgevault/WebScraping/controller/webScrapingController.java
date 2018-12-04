@@ -52,7 +52,9 @@ public class webScrapingController {
     @GetMapping()
     public ResponseEntity<?> getAllTerms(){
         ResponseEntity responseEntity;
-        POJOClass pojoClass = new POJOClass(url, webScraping.getTitle(url), webScraping.getAllParagraphs(url), webScraping.getBody(url));
+        webScraping.readJSON();
+        POJOClass pojoClass = new POJOClass(url, webScraping.getTitle(url), webScraping.getAllParagraphs(), webScraping.getBody());
+        webScraping.getMap();
         kafkaTemplate.send(KafkaTopic, pojoClass);
         responseEntity = new ResponseEntity<POJOClass>(pojoClass, HttpStatus.OK);
         return responseEntity;
