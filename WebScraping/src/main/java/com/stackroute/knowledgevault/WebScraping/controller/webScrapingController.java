@@ -1,5 +1,6 @@
 package com.stackroute.knowledgevault.WebScraping.controller;
 
+import com.stackroute.knowledgevault.WebScraping.services.Scores;
 import com.stackroute.knowledgevault.WebScraping.services.webScraping;
 import com.stackroute.knowledgevault.domain.POJOClass;
 import org.slf4j.Logger;
@@ -11,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 /**
  * Controller class, to make GET request.
@@ -21,14 +24,14 @@ import org.springframework.web.bind.annotation.*;
 public class webScrapingController {
 
     @Qualifier("webScrapingImpl")
-    private webScraping webScraping;
+    private Scores scores;
 
     private String url;
     private static final Logger LOGGER = LoggerFactory.getLogger(webScrapingController.class);
 
     @Autowired
-    public webScrapingController(webScraping webScraping) {
-        this.webScraping = webScraping;
+    public webScrapingController(Scores scores) {
+        this.scores = scores;
     }
 
     @Autowired
@@ -52,11 +55,13 @@ public class webScrapingController {
     @GetMapping()
     public ResponseEntity<?> getAllTerms(){
         ResponseEntity responseEntity;
-        webScraping.readJSON();
-        POJOClass pojoClass = new POJOClass(url, webScraping.getTitle(url), webScraping.getAllParagraphs(), webScraping.getBody());
-        webScraping.getMap();
-        kafkaTemplate.send(KafkaTopic, pojoClass);
-        responseEntity = new ResponseEntity<POJOClass>(pojoClass, HttpStatus.OK);
+        scores.readJSON();
+        Map<String, Double> scoredTerms = scores.getScoredDoc(url);
+//        webScraping.readJSON();
+//        POJOClass pojoClass = new POJOClass(url, webScraping.getTitle(url), webScraping.getAllParagraphs(), webScraping.getBody());
+//        webScraping.getMap();
+//        kafkaTemplate.send(KafkaTopic, pojoClass);
+        responseEntity = new ResponseEntity<Map<String, Double>>(scoredTerms, HttpStatus.OK);
         return responseEntity;
     }
 
