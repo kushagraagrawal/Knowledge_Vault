@@ -28,4 +28,21 @@ public class webScrapingImpl implements webScraping {
         this.TermWeights = scores.getScoredDoc(url);
         return TermWeights;
     }
+
+    @Override
+    public String getTitle() {
+        return scores.getTitle();
+    }
+
+    @Override
+    public String getEvaluatedTitle() {
+
+        Map.Entry<String,Double> entry = TermWeights.entrySet().iterator().next();
+        return entry.getKey();
+    }
+
+    @Override
+    public String getDescription() {
+        return scores.getDescription();
+    }
 }

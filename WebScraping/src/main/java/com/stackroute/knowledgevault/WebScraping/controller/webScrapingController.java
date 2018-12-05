@@ -56,8 +56,9 @@ public class webScrapingController {
     public ResponseEntity<?> getAllTerms(){
         ResponseEntity responseEntity;
         webScraper.getURL(url);
-        Map<String, Double> scoredTerms = webScraper.getScoredDocs();
-        responseEntity = new ResponseEntity<>(scoredTerms, HttpStatus.OK);
+        webScraper.getScoredDocs();
+        POJOClass pojoClass = new POJOClass(url, webScraper.getEvaluatedTitle(),webScraper.getTitle(), webScraper.getDescription());
+        responseEntity = new ResponseEntity<>(pojoClass, HttpStatus.OK);
         return responseEntity;
     }
 

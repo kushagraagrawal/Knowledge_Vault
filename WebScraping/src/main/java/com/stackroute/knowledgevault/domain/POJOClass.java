@@ -16,7 +16,7 @@ import java.util.List;
 
 public class POJOClass {
     String url;
+    String evaluatedTitle;
     String title;
-    List<String> paragraph;
-    String body;
+    String description;
 }

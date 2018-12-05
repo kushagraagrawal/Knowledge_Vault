@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ public class ScoresImpl implements Scores {
     private Map<String, Long> tagWeights = new HashMap<>();
     private Document document;
     private StopwordRemoval stopwordRemoval = new StopwordRemoval();
+    private String title;
 
     @Override
     public void calculateScore(Document document, String tag) {
@@ -72,6 +74,11 @@ public class ScoresImpl implements Scores {
         try{
             TermWeights.clear();
             document = Jsoup.connect(url).get();
+            /*
+            To ignore wikipedia references
+             */
+            title = document.title();
+            document.select("ol.references").remove();
             calculateScore(document, "html");
             calculateScore(document,"head");
             calculateScore(document, "title");
@@ -104,6 +111,14 @@ public class ScoresImpl implements Scores {
             LOGGER.info(e.getMessage());
         }
         return TermWeights;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public String getDescription(){
+        return document.select("table.infobox").text();
     }
 
     @Override
